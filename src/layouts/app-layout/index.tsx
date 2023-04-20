@@ -13,7 +13,7 @@ const AppLayout: React.FC = () => {
       <SideBar />
       <Layout className="site-layout">
         <Header style={{ padding: 0, background: colorBgContainer }} />
-        <Content style={{ margin: '0 16px' }}>
+        <Content style={{ margin: '0 16px', backgroundColor: '#fff '}}>
           <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
             <h1>Main content</h1>
           </div>
