@@ -9,6 +9,8 @@ import {
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
+import { routes } from '../../routes';
+import { useNavigate } from 'react-router-dom';
 
 const { Sider } = Layout;
 
@@ -18,7 +20,7 @@ function getItem(
   label: React.ReactNode,
   key: React.Key,
   icon?: React.ReactNode,
-  children?: MenuItem[],
+  children?: MenuItem[]
 ): MenuItem {
   return {
     key,
@@ -36,23 +38,43 @@ const items: MenuItem[] = [
     getItem('Bill', '4'),
     getItem('Alex', '5'),
   ]),
-  getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
+  getItem('Team', 'sub2', <TeamOutlined />, [
+    getItem('Team 1', '6'),
+    getItem('Team 2', '8'),
+  ]),
   getItem('Files', '9', <FileOutlined />),
 ];
 
-const handleOnclick = ({ item, key, keyPath, domEvent } : any) => {
-  console.log("item", item);
-  console.log("key", key);
-  console.log("keyPath", keyPath);
-  console.log("domEvent", domEvent);
-}
-
 const SideBar: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
+  const handleOnclick = ({ item, key, keyPath, domEvent }: any) => {
+    console.log('item', item);
+    console.log('key', key);
+    console.log('keyPath', keyPath);
+    console.log('domEvent', domEvent);
+    navigate(key);
+  };
   return (
-    <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-      <div style={{ height: 32, margin: 16, background: 'rgba(255, 255, 255, 0.2)' }} />
-      <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items}  onClick={handleOnclick}/>
+    <Sider
+      collapsible
+      collapsed={collapsed}
+      onCollapse={(value) => setCollapsed(value)}
+    >
+      <div
+        style={{
+          height: 32,
+          margin: 16,
+          background: 'rgba(255, 255, 255, 0.2)',
+        }}
+      />
+      <Menu
+        theme='dark'
+        defaultSelectedKeys={['1']}
+        mode='inline'
+        items={routes}
+        onClick={handleOnclick}
+      />
     </Sider>
   );
 };

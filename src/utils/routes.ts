@@ -1,9 +1,12 @@
-import { RoutesItem } from '../src/routes/index';
+import { RoutesItem } from '../routes/index';
 
 export const RouterHelper = {
   admin_notification: '/admin-notification',
   home: '/',
   login: '/login',
+  product: '/products',
+  admin_order: '/admin-orders',
+  file_uploads: '/file-uploads',
 
   forgot_password: '/forgot-password',
   verify_otp: '/verify-otp',

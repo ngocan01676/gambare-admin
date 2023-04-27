@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
 
-export const PRODUCT_PAGE: React.FC<any> = () => {
-  return <>
-    <h1>Product page</h1>
-  </>
-}
+export const productPage: React.FC<any> = () => {
+  return (
+    <>
+      <h1>Product page</h1>
+    </>
+  );
+};

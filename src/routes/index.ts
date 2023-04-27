@@ -1,4 +1,9 @@
 import { MenuProps } from 'antd';
+import { RouterHelper } from '../utils/routes';
+import { DashboardPage } from '../pages/dashboard/dashboard.page';
+import { productPage } from '../pages/product/product.page';
+import { AdminOrderPage } from '../pages/admin_orders/admin_orders.page';
+import { FileUploadsPage } from '../pages/file_uploads/file_uploads.page';
 
 export type MenuItem = Required<MenuProps>['items'][number];
 
@@ -15,49 +20,33 @@ export type RoutesItem = {
 
 export const routes: RoutesItem[] = [
   {
-    key: RouterHelper.admin_notification,
-    label: 'Admin Notification',
-    path: RouterHelper.admin_notification,
-    element: AdminNotificationPage,
-    showOnMenu: true,
-  },
-  {
     key: RouterHelper.home,
     label: 'Home',
     path: RouterHelper.home,
-    element: HomePage,
+    element: DashboardPage,
     showOnMenu: true,
   },
   {
-    key: RouterHelper.submission,
-    label: 'Submission Management',
-    path: RouterHelper.submission,
-    element: null,
+    key: RouterHelper.product,
+    label: 'Product',
+    path: RouterHelper.product,
+    element: productPage,
     showOnMenu: true,
-    children: [...submissionRoutes],
   },
   {
-    key: RouterHelper.administrator,
-    label: 'Administrator',
-    path: RouterHelper.administrator,
-    element: null,
+    key: RouterHelper.admin_order,
+    label: 'Orders',
+    path: RouterHelper.admin_order,
+    element: AdminOrderPage,
     showOnMenu: true,
-    children: [...userRoutes, ...organizationRoutes, ...roleRoutes],
+    //children: [...submissionRoutes],
   },
   {
-    key: RouterHelper.cms,
-    label: 'CMS',
-    path: RouterHelper.cms,
-    element: null,
+    key: RouterHelper.file_uploads,
+    label: 'File upload',
+    path: RouterHelper.file_uploads,
+    element: FileUploadsPage,
     showOnMenu: true,
-    children: [...cmsRoutes],
-  },
-  {
-    key: RouterHelper.configuration,
-    label: 'Configuration',
-    path: RouterHelper.configuration,
-    element: null,
-    showOnMenu: true,
-    children: [...configurationRoutes],
+    //children: [...submissionRoutes],
   },
 ];
