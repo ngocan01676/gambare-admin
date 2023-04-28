@@ -41,7 +41,16 @@ export const RouterHelper = {
   administrator_role_management_edit_ref: (id: string) =>
     `/administrator_role_management/edit/${id}`,
 
-  product_management: '/product-management',
+  product_management: '/product',
+  product_internal: 'product-internal',
+  product_external: 'product-external',
+  product_import: 'product-import',
+  product_export: 'product-export',
+  product_category: 'product-category',
+  product_brand: 'product-brand',
+  product_attributes: 'product-attributes',
+  product_color: 'product-color',
+  product_reviews: 'product-reviews',
   product_management_create: '/product-management/create',
   product_detail: '/product-management/detail/:id',
   product_edit: '/product-management/edit/:id',
@@ -64,7 +73,14 @@ export const RouterHelper = {
     `/product-management/group/edit/${id}`,
   product_name_edit: '/product-management/name/edit/:id',
   product_name_edit_ref: (id: string) => `/product-management/name/edit/${id}`,
-
+  //For orders
+  orders_all: 'orders-all',
+  orders_internal: 'orders-internal',
+  orders_external: 'orders-external',
+  orders_export: 'orders-export',
+  //For staff
+  staff_all: 'staff-all',
+  staff_permission: 'staff-permission',
   submission: '/submission',
   submission_view_all: '/submission/view-all',
   submission_detail: `/submission/detail/:id`,

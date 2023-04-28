@@ -4,7 +4,7 @@ import SideBar from '../app-sidebar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { flattenRoutes } from '../../utils/routes';
 import { routes } from '../../routes';
-import { AdminOrderPage } from '../../pages/admin_orders/admin_orders.page';
+import { AdminOrderPage } from '../../pages/admin_orders/index.page';
 import { FileUploadsPage } from '../../pages/file_uploads/file_uploads.page';
 const { Header, Content, Footer } = Layout;
 

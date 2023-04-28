@@ -60,6 +60,7 @@ const SideBar: React.FC = () => {
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
+      width={250}
     >
       <div
         style={{
